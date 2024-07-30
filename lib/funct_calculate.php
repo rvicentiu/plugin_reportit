@@ -435,6 +435,7 @@ function calculate(& $data,& $params, & $variables, & $df_cache, & $dm_cache, & 
 
 	//Create a cache for every Round Robin Archive
 	foreach ($ds_namv as $key => $ds_name) {
+		debug($ds_name, "RRA", $key);
 		$cache[$key] = 	array($f_cache, $m_cache, $p_cache);
 	}
 
@@ -545,8 +546,8 @@ function calculate(& $data,& $params, & $variables, & $df_cache, & $dm_cache, & 
 			if (array_key_exists($k, $s_cache)) {
 				$s_cache[$k] = $result;
 
-				for ($i=0; $i<$n_rra; $i++) {
-					unset($cache[$i][1][$k]);
+				foreach ($cache as $key => $value) {
+					unset($cache[$key][1][$k]);
 				}
 
 				continue 2;

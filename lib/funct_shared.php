@@ -1191,10 +1191,9 @@ function transform_htmlspecialchars(&$data){
 function get_mem_usage() {
 	if (version_compare(phpversion(), '5.2.1') == -1) return;
 
-	$memory_system  = ini_get('memory_limit') .'B ';
+	$memory_system  = ini_get('memory_limit');
 	$memory_used    = round(memory_get_usage()/pow(1024,2),2);
 	$memory_peak    = round(memory_get_peak_usage()/pow(1024,2),2);
-
 	if ($memory_system == -1) {
 		$memory_system = 'unlimited';
 		$memory_used   .= 'MB';
@@ -1204,7 +1203,7 @@ function get_mem_usage() {
 		$memory_peak   .= 'MB(' . round($memory_peak/$memory_system*100,2) . '%)';
 	}
 
-	print " Memory:  System: $memory_system   Used: $memory_used   Peak: $memory_peak\n";
+	print " Memory:  System: $memory_system B  Used: $memory_used   Peak: $memory_peak\n";
 }
 
 function send_scheduled_email($report_id){
