@@ -126,7 +126,7 @@ function standard() {
 	$header_label = __("Variables [Template: <a class='linkEditMain' href='templates.php?action=template_edit&id=" . get_request_var('id') . "'>%s</a> ] [%d]", $template_name, $number_of_variables, 'reportit');
 
 	form_start('variables.php');
-	html_start_box($header_label, '100%', '', '2', 'center', 'variables.php?action=variable_edit&template_id=' . get_request_var('id'));
+	html_start_box($header_label, '100%', '', '2', 'center', 'variables.php?action=variable_edit&template_id=' . get_request_var('template_id'));
 
 	html_header_checkbox($desc_array);
 

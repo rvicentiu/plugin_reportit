@@ -509,7 +509,7 @@ function standard() {
 
 			$link = $template['variables'] != NULL
 				? '<a class="linkEditMain" href="' . htmlspecialchars('variables.php?id=' . $template['id']) . '">'
-				: '<a class="linkEditMain" href="' . htmlspecialchars('variables.php?action=measurand_edit&template_id=' . $template['id']) . '">';
+				: '<a class="linkEditMain" href="' . htmlspecialchars('variables.php?action=variable_edit&template_id=' . $template['id']) . '">';
 
 			form_selectable_cell($link . html_sources_icon($template['variables'], __('Edit variables'), __('Add variables')) . '</a>', $template['id']);
 
