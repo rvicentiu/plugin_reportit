@@ -691,7 +691,7 @@ function form_save() {
 							session_custom_error_message('report_email_address', 'Invalid email address');
 						} else {
 							if (array_key_exists($key, $recipients) && $recipients[$key][1] != '[') {
-								$name = db_qstr($recipients[$key]);
+								$name = trim($recipients[$key]);
 							} else {
 								$name = '';
 							}
