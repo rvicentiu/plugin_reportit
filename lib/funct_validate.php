@@ -56,14 +56,14 @@ function validate_calc_formula($calc_formula, $calc_intersizes, $calc_var_names,
 
 	$valids['signs']['S']        = array('(', ')', '.', ',');
 	$valids['signs']['R']        = array('L', 'R', '.', ',');
-	$valids['operators']['S']    = array('+','-','*','/');
-	$valids['operators']['R']    = array('+','-','*','/');
+	$valids['operators']['S']    = array('+','-','*','/','%','^');
+	$valids['operators']['R']    = array('+','-','*','/','%','^');
 	$valids['numbers']['S']      = array('1','2','3','4','5','6','7','8','9','0');
 	$valids['numbers']['R']      = 'N';
 
 	//Invalid combinations of signs:
 	$invalids = array(
-		'++', '+*', '+/', '--', '-*', '-/', '**', '*/', '/*', '//',
+		'++', '+*', '+/', '--', '-*', '-/', '*/', '/*', '//',
 		'NE', 'EN',
 		'LR', 'L*', 'L/', '.L', 'EL', 'NL',
 		'RL', '+R', '-R', '*R', '/R', 'R.', 'RE', 'RN',
